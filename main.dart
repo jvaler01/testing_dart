@@ -21,5 +21,4 @@ Future main() async {
       await request.response.close();
     }
   }
-  // #enddocregion listen
 }
