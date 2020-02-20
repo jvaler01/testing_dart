@@ -40,6 +40,10 @@ class Doooooggg{
     this._nombre = nombre;
     this._edad = edad;
   }
+
+  Doooooggg.dogNombre( this._nombre ){
+    _bio = 'constructor nombre';
+  }
   //Métodos
 
   @override
