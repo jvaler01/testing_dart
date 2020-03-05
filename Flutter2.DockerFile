@@ -1,14 +1,8 @@
-# Flutter (https://flutter.io) Developement Environment for Linux
-# ===============================================================
-#
-# This environment passes all Linux Flutter Doctor checks and is sufficient
-# for building Android applications and running Flutter tests.
-#
-# To build iOS applications, a Mac development environment is necessary.
-#
-
 FROM debian:stretch
 
+
+# ENV FLUTTER_VERSION="v1.12.13+hotfix.8"
+ENV ANDROID_VERSION="29"
 # Install Dependencies.
 RUN apt update -y
 RUN apt install -y \
@@ -27,8 +21,8 @@ RUN mkdir -p "${ANDROID_TOOLS_ROOT}"
 ENV ANDROID_SDK_ARCHIVE="${ANDROID_TOOLS_ROOT}/archive"
 RUN wget -q "${ANDROID_SDK_URL}" -O "${ANDROID_SDK_ARCHIVE}"
 RUN unzip -q -d "${ANDROID_TOOLS_ROOT}" "${ANDROID_SDK_ARCHIVE}"
-RUN yes "y" | "${ANDROID_TOOLS_ROOT}/tools/bin/sdkmanager" "build-tools;28.0.0"
-RUN yes "y" | "${ANDROID_TOOLS_ROOT}/tools/bin/sdkmanager" "platforms;android-28"
+RUN yes "y" | "${ANDROID_TOOLS_ROOT}/tools/bin/sdkmanager" "build-tools;$ANDROID_VERSION.0.0"
+RUN yes "y" | "${ANDROID_TOOLS_ROOT}/tools/bin/sdkmanager" "platforms;android-$ANDROID_VERSION"
 RUN yes "y" | "${ANDROID_TOOLS_ROOT}/tools/bin/sdkmanager" "platform-tools"
 RUN rm "${ANDROID_SDK_ARCHIVE}"
 ENV PATH="${ANDROID_TOOLS_ROOT}/tools:${PATH}"
@@ -59,7 +53,10 @@ RUN flutter upgrade
 
 # Setting up the development environment
 RUN useradd -ms /bin/bash -g root -G sudo -d /home/dev dev
+# RUN echo "chown -R dev /otp/flutter/"
+RUN cd /opt && chown -R dev flutter/
 USER dev
+RUN echo "export PATH=$PATH:/opt/flutter/bin:/opt/android_sdk/tools/bin:/opt/android_sdk/tools" >> /home/dev/.bashrc
 # Setting up the workspace
 RUN mkdir /home/dev/workspace
 WORKDIR /home/dev/workspace
