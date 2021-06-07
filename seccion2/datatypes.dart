@@ -6,7 +6,7 @@ main(){
   // print(a);
   double b = 10.5;
   // print(b);
-  int c = null; // int c;
+  int? c = null; // int c = null; // int c;
   // int x = 10, b = 20, c = 30;
   int _a;
 
@@ -15,11 +15,14 @@ main(){
   String nombre = 'asdf';
   String nombre2 = "asdf";
   String nombre3 = '\'asdf';
+  String? nombre4 = null;
   // print(nombre);
   // print(nombre2);
   // print(nombre3);
+  // print(nombre4);
   String multi = '''
   asdf
+  $nombre3
   asdf3  
   ''';
   // print(multi);
@@ -28,8 +31,10 @@ main(){
 
   // ------------------Booleans
   bool activo = true;
-  bool activo2;
+  bool noActivo = !activo;
+  bool? activo2;
   // print(activo);
+  // print(noActivo);
   // print(activo2);
 
 
@@ -37,10 +42,12 @@ main(){
   // -------------------Listas - Arrays
   var neutro = ['a','b'];
   List<String> strings = ['a', 'b'];
+  strings[0] = 'c';
   List<int> numeros = [1, 2];
   List<bool> booleanos = [true, false];
 
-  List<String> strings2 = new List();
+  // List<String> strings2 = new List();
+  List<String> strings2 = [];
   strings2.add('a');
   strings2.addAll(['a','b','c']);
   strings2..add('a')
@@ -48,7 +55,8 @@ main(){
 
   // print(strings2);
 
-  List<String> strings3 = new List(3); //[null, null, null]
+  // List<String> strings3 = new List(3); //[null, null, null]
+  List<String> strings3 = List.filled(3, '');
   // strings3.addAll(['a','b','c']);
   strings3[0] = 'a';
   strings3[1] = 'b';
