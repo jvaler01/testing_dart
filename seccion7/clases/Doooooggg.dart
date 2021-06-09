@@ -7,26 +7,26 @@ class Doooooggg{
   // String bio;
 
 
-  //Priivadas
-  String _nombre;
-  int _edad;
-  String _bio;
+  //Privadas
+  String? _nombre;
+  int? _edad;
+  String? _bio;
 
   //Get Set
-  String get getNombre {
+  String? get getNombre {
     return _nombre;
   }
   set setNombre( String nombre ){
     _nombre = nombre;
   }
-  int get getEdad {
+  int? get getEdad {
     return _edad;
   }
   set setEdad( int edad ){
     _edad = edad;
   }
   String get getBio {
-    return _bio;
+    return _bio ?? 'No bio';
   }
   set setBio( String bio ){
     _bio = bio;
@@ -35,7 +35,7 @@ class Doooooggg{
   // Doooooggg(){
   //   _bio = 'constructor bio';
   // }
-  Doooooggg( {String nombre = 'a', int edad = 0} ){
+  Doooooggg( { String nombre = 'a', int edad = 0} ){
     _bio = 'constructor bio';
     this._nombre = nombre;
     this._edad = edad;

@@ -14,11 +14,11 @@ class RequestResp {
     List<Data> data;
 
     RequestResp({
-        this.page,
-        this.perPage,
-        this.total,
-        this.totalPages,
-        this.data,
+        required this.page,
+        required this.perPage,
+        required this.total,
+        required this.totalPages,
+        required this.data,
     });
 
     factory RequestResp.fromJson(Map<String, dynamic> json) => RequestResp(

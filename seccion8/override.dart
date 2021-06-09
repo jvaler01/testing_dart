@@ -8,7 +8,7 @@ class Persona {
 }
 
 class Cliente extends Persona{
-  String direccion;
+  String? direccion;
   List ordenes = [];
 
   Cliente(int edad, String nombre) : super(edad, nombre);

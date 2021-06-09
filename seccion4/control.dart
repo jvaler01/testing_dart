@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:math';
 
 main(){
-  var cad = "";
+  var cad;
 
   //-----Escribir en la terminal
   stdout.writeln('Escribe tu edad: ');
@@ -71,9 +71,9 @@ main(){
 
 }
 
-bool isNumeric(String s) {
+bool isNumeric(var s) {
   if(s == null) {
     return false;
   }
-  return double.parse(s, (e) => null) != null;
+  return double.tryParse(s) != null;
 }

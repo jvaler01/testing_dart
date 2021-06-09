@@ -108,10 +108,10 @@ class Herramientas{
 }
 
 class Rectangulo {
-  int base;
-  int altura;
-  int area;
-  String tipo;
+  int? base;
+  int? altura;
+  int? area;
+  String? tipo;
 
   factory Rectangulo(int base, int altura){ // Debe de regresar una nueva instancia de rectangulo o la misma
     if(base == altura){

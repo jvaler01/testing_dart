@@ -17,16 +17,16 @@ class Translations {
     String fa;
 
     Translations({
-        this.de,
-        this.es,
-        this.fr,
-        this.ja,
-        this.it,
-        this.br,
-        this.pt,
-        this.nl,
-        this.hr,
-        this.fa,
+        required this.de,
+        required this.es,
+        required this.fr,
+        required this.ja,
+        required this.it,
+        required this.br,
+        required this.pt,
+        required this.nl,
+        required this.hr,
+        required this.fa,
     });
 
     factory Translations.fromJson(Map<String, dynamic> json) => Translations(

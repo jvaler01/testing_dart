@@ -11,10 +11,10 @@ class Language {
     String nativeName;
 
     Language({
-        this.iso6391,
-        this.iso6392,
-        this.name,
-        this.nativeName,
+        required this.iso6391,
+        required this.iso6392,
+        required this.name,
+        required this.nativeName,
     });
 
     factory Language.fromJson(Map<String, dynamic> json) => Language(

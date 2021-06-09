@@ -22,7 +22,7 @@ main(){
   //-----------------------
 
   int e = 10;
-  int f;
+  int? f;
 
   f ??= 20; //si f es null entonces ahora es 20
 

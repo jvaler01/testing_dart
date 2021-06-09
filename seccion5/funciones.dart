@@ -3,8 +3,8 @@ void main(){
   // String greet = greeter();
   // print(greet);
   // write('ret');
-  // write2('ret', 1);
-  // write3(count: 2, name: 'write3');
+  // write2('ret', 1); // argumentos por posicion
+  // write3(count: 2, name: 'write3'); // argumentos por nombre
 
 
 
@@ -33,6 +33,8 @@ void main(){
   // print(res);
   // print(operation2(a,b));
 
+
+  // ---------- Funciones de flecha ---------
   // List<int> list = [1,3,4,6,7,8,9,45,5,4,3,3];
   // // var newList = list.where( (number){
   // //   return number >= 4;
@@ -61,7 +63,7 @@ String greeter(){
   return 'greet';
 }
 
-void write(String message, [String name = '']){
+void write(String message, [String name = '']){ // name es opcional
   print('$message $name');
 }
 
@@ -71,7 +73,7 @@ void write2(String name, int count){
   }
 }
 
-void write3({ String name, int count }){
+void write3({ required String name, int count = 10}){
   for(int i = 0; i < count; i++){
     print('$name');
   }
@@ -83,9 +85,9 @@ String upperCase(String text){
 
 Map<String, String> mapUpperCase(Map<String, String> pj){
 
-  pj = {... pj}; //Clonar para no modificar la original (pasada por referencia)
+  pj = {... pj}; //Clonar para no modificar la original (pasada por referencia) dart siempre pasa por referencia
 
-  pj['name'] = pj['name'].toUpperCase();
+  pj['name'] = pj['name']?.toUpperCase() ?? 'No hay nombre';
   return pj;
 }
 

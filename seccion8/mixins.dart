@@ -7,7 +7,7 @@ mixin Logger {
 }
 
 abstract class Astro with Logger { //Se concatenan con comas
-  String nombre;
+  String? nombre;
 
   Astro(){
     imprimir('init Astro');
@@ -19,7 +19,7 @@ abstract class Astro with Logger { //Se concatenan con comas
 }
 
 class Asteroid extends Astro {
-  String nombre;
+  String? nombre;
 
   Asteroid(this.nombre){
     imprimir('Name: $nombre');

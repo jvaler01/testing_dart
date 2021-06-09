@@ -18,4 +18,11 @@ main(){
   // personasConst.add('Maria');
 
   print(personasFinal);
+
+  late final double x;
+
+  x = 10;
+
+
+  print(x);
 }

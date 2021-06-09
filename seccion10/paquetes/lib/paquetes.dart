@@ -5,7 +5,8 @@ import 'package:paquetes/classes/request_country.dart' as request_country;
 
 
 void getRequestService(){
-  final url = 'https://reqres.in/api/users?page=2';
+  // final url = 'https://reqres.in/api/users?page=2';
+  final url = Uri.parse('https://reqres.in/api/users?page=2');
   http.get(url).then((resp){
     // final body = jsonDecode(resp.body);
     // print(body);
@@ -18,7 +19,8 @@ void getRequestService(){
 
 
 void getRequestServiceCountry(){
-  final url = 'https://restcountries.eu/rest/v2/alpha/col';
+  // final url = 'https://restcountries.eu/rest/v2/alpha/col';
+  final url = Uri.parse('https://restcountries.eu/rest/v2/alpha/col');
   http.get(url).then((resp){
     final response = request_country.dataFromJson(resp.body);
     print('=====================');

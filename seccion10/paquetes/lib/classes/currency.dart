@@ -10,9 +10,9 @@ class Currency {
     String symbol;
 
     Currency({
-        this.code,
-        this.name,
-        this.symbol,
+        required this.code,
+        required this.name,
+        required this.symbol,
     });
 
     factory Currency.fromJson(Map<String, dynamic> json) => Currency(

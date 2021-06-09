@@ -12,11 +12,11 @@ class Data {
     String avatar;
 
     Data({
-        this.id,
-        this.email,
-        this.firstName,
-        this.lastName,
-        this.avatar,
+        required this.id,
+        required this.email,
+        required this.firstName,
+        required this.lastName,
+        required this.avatar,
     });
 
     factory Data.fromJson(Map<String, dynamic> json) => Data(

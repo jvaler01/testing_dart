@@ -1,2 +1,7 @@
 # testing_dart
-testing dart
+Dart repository dedicated to testing and learning.
+
+## Commands
+- **dart** + <main.dart file>
+- **dart** + pub get
+- **dart** + pug add <package name> (example http)

@@ -11,10 +11,10 @@ class RegionalBloc {
     List<String> otherNames;
 
     RegionalBloc({
-        this.acronym,
-        this.name,
-        this.otherAcronyms,
-        this.otherNames,
+        required this.acronym,
+        required this.name,
+        required this.otherAcronyms,
+        required this.otherNames,
     });
 
     factory RegionalBloc.fromJson(Map<String, dynamic> json) => RegionalBloc(
